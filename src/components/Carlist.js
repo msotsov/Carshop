@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+import DeleteIcon from '@material-ui/icons/Delete';
 import Addcar from './Addcar';
 import Editcar from './Editcar';
 
@@ -104,14 +105,14 @@ export default function Carlist() {
             filterable: false,
             width: 100,
             accessor: '_links.self.href',
-            Cell: row => <Button variant='outlined' color='secondary' size='small' onClick={() => deleteCar(row.value)}>Delete</Button>
+            Cell: row => <Button variant='outlined' endIcon={<DeleteIcon />} color='secondary' size='small' onClick={() => deleteCar(row.value)}>Delete</Button>
         }
     ]
 
     return (
         <div>
             <Addcar saveCar={saveCar}/>
-            <ReactTable filterable={true} data={cars} columns={columns} />
+            <ReactTable filterable={true} data={cars} columns={columns} defaultPageSize='10' />
             <Snackbar
                 anchorOrigin={{
                     vertical:'bottom',

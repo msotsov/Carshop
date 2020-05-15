@@ -5,6 +5,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import EditIcon from '@material-ui/icons/Edit';
 
 export default function Editcar(props) {
     const [open, setOpen] = useState(false);
@@ -39,7 +40,7 @@ export default function Editcar(props) {
 
     return (
         <div>
-        <Button size='small' color="primary" onClick={handleClickOpen}>
+        <Button size='small' variant='outlined' color="primary" startIcon={<EditIcon />} onClick={handleClickOpen}>
             Edit
         </Button>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
