@@ -43,7 +43,7 @@ export default function Carlist() {
         .then(res => fetchData())
         .catch(err => console.error(err))
         setOpen(true);
-        setMessage('Car saved');
+        setMessage('New car saved');
     }
 
     const editCar = (car, link) => {
@@ -57,7 +57,7 @@ export default function Carlist() {
         .then(res => fetchData())
         .catch(err => console.error(err))
         setOpen(true);
-        setMessage('Car edited');
+        setMessage('Data edited');
 
     }
 
